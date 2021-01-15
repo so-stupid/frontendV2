@@ -1,0 +1,43 @@
+<form #workerForm="ngForm" *ngIf="worker" class="page-container">
+  <div class="container-m">
+    <div class="form-signin">
+      <h1 class="h3 mb-3 font-weight-small">Введите данные сотрудника</h1>
+      <div class="group-input">
+      <app-input-field name="fullName"
+                       placeholder="ФИО"
+                       type="text"
+                       required="true"
+                       [(ngModel)]="worker.fullName">
+
+      </app-input-field>
+      <app-input-field name="address"
+                       placeholder="Полный адрес"
+                       [(ngModel)]="worker.address"
+                       type="text"
+                       required="true">
+      </app-input-field>
+      <app-input-field name="phoneNumber"
+                       placeholder="Номер телефона"
+                       [(ngModel)]="worker.phoneNumber"
+                       type="number"
+                       required="true">
+      </app-input-field>
+      <app-input-field name="type"
+                       placeholder="Профессия"
+                       [(ngModel)]="worker.typeWorker.id"
+                       type="number"
+                       required="true">
+      </app-input-field>
+      </div>
+
+
+      <button class="btn btn-lg btn-primary btn-block"
+              type="submit"
+              [disabled]="!workerForm.valid"
+      (click)="saveWorker()">
+        Сохранить
+      </button>
+      <pre>{{worker | json}}</pre>
+    </div>
+  </div>
+</form>

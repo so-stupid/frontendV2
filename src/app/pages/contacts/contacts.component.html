@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>На данной странице расположены контактные данные наших работников</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">ФИО</th>
+      <th scope="col">Адрес</th>
+      <th scope="col">Номер телефона</th>
+      <th scope="col">Профессия</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let worker of workers">
+      <td>{{worker.fullName}}</td>
+      <td>{{worker.address}}</td>
+      <td>{{worker.phoneNumber}}</td>
+      <td>{{worker.typeWorker.type}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <app-workers-form></app-workers-form>
+
+</div>

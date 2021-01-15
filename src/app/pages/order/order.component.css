@@ -1,0 +1,22 @@
+.form-row{
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+label{
+  margin: 5px;
+}
+
+.separate{
+  border: #90909054 1px solid;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+}

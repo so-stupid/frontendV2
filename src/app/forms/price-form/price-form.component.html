@@ -1,0 +1,30 @@
+<form #priceForm="ngForm" *ngIf="price" class="page-container">
+  <div class="container-m">
+    <div class="form-signin">
+      <h1 class="h3 mb-3 font-weight-small">Введите услугу</h1>
+      <div class="group-input">
+        <app-input-field name="serviceName"
+                         placeholder="Наименование услуги"
+                         type="text"
+                         required="true"
+                         [(ngModel)]="price.serviceName">
+
+        </app-input-field>
+        <app-input-field name="price"
+                         placeholder="Стоимость"
+                         [(ngModel)]="price.price"
+                         type="number"
+                         required="true">
+        </app-input-field>
+      </div>
+
+
+      <button class="btn btn-lg btn-primary btn-block"
+              type="submit"
+              [disabled]="!priceForm.valid"
+              (click)="savePrice()">
+        Сохранить
+      </button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+input{
+  margin: 7px;
+  width: 250px;
+}
+
+button {
+  width: 250px;
+}
+
+.group-input{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
