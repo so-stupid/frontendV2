@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Worker} from '../../dto/worker';
+import {Orders} from '../../dto/orders';
+import {OrdersService} from '../../services/orders.service';
+
 
 @Component({
   selector: 'app-orders',
@@ -6,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./orders.component.css']
 })
 export class OrdersComponent implements OnInit {
+  orders: Orders[];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private ordersService: OrdersService) {
   }
 
+  ngOnInit(): void {
+    this.getAllOrders();
+  }
+
+  getAllOrders(): any {
+    return this.ordersService.getAllOrders()
+      // @ts-ignore TODO Разберись с беком
+      .subscribe(www => this.orders = www.orders);
+  }
 }
