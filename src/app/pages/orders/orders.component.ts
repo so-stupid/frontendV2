@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Orders} from '../../dto/orders';
 import {OrdersService} from '../../services/orders.service';
 import {timeConverter} from '../../utils/time.util';
+import {UserService} from '../../services/user.service';
+import {User} from '../../dto/User';
 
 
 @Component({
@@ -11,8 +13,9 @@ import {timeConverter} from '../../utils/time.util';
 })
 export class OrdersComponent implements OnInit {
   orders: Orders[];
+  user: User = {lastName: '1', email: '1', emailVerified: false, firstName: '1', username: '2'};
 
-  constructor(private ordersService: OrdersService) {
+  constructor(private ordersService: OrdersService, private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -20,7 +23,7 @@ export class OrdersComponent implements OnInit {
   }
 
   toTime(temp): any {
-    return timeConverter(temp)
+    return timeConverter(temp);
   }
 
   getAllOrders(): any {
