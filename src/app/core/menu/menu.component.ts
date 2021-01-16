@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {KeycloakService} from 'keycloak-angular';
 
 @Component({
@@ -8,9 +8,14 @@ import {KeycloakService} from 'keycloak-angular';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private keycloackService: KeycloakService) { }
+  constructor(private keycloackService: KeycloakService) {
+  }
 
   ngOnInit(): void {
+  }
+
+  isAuth(): boolean {
+    return this.keycloackService.isUserInRole('user');
   }
 
   logout(): void {

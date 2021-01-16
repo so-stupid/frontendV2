@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {KeycloakService} from 'keycloak-angular';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private keyService: KeycloakService) {
   }
 
+
+  ngOnInit(): void {
+    console.log(this.isAuth());
+  }
+
+  isAuth(): boolean {
+    return this.keyService.isUserInRole('user');
+  }
 }
+

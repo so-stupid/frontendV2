@@ -1,3 +1,7 @@
 #navbarsExampleDefault {
   justify-content: space-between;
 }
+
+.flex-menu {
+  display: flex;
+}

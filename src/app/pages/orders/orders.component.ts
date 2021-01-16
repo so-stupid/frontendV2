@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Worker} from '../../dto/worker';
 import {Orders} from '../../dto/orders';
 import {OrdersService} from '../../services/orders.service';
 

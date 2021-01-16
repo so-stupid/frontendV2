@@ -17,21 +17,25 @@
         <a class="nav-link" routerLink="price">Прайс-лист</a>
       </li>
     </ul>
-    <ul class="navbar-nav">
+    <ul class="navbar-nav" *ngIf="isAuth()">
       <li class="nav-item">
         <a class="nav-link" routerLink="orders">Текущие заказы</a>
       </li>
     </ul>
     <ul class="navbar-nav">
+    <div class="flex-menu" *ngIf="!isAuth()">
       <li class="nav-item">
-        <a class="nav-link" routerLink="auth">Авторизация</a>
+        <a class="nav-link" routerLink="orders">Авторизация</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="registration">Регистрация</a>
+        <a class="nav-link" routerLink="orders">Регистрация</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="logout()">Выход</a>
-      </li>
+    </div>
+      <div class="flex-menu" *ngIf="isAuth()">
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()">Выход</a>
+        </li>
+      </div>
     </ul>
   </div>
 </nav>

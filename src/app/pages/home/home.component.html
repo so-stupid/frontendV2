@@ -12,8 +12,13 @@
           Автоматизируйте работу администратора и экономьте время ваших клиентов. Клиенты смогут быстро и просто
           записаться в автосервис на любую ремонтную услугу, а вы — лучше анализировать работу своего бизнеса.
         </p>
-        <button type="button" routerLink="orders" class="btn btn-primary">Войти</button>
-        <button type="button" routerLink="registration" class="btn btn-secondary">Зарегестрироваться</button>
+        <div *ngIf="!isAuth()">
+          <button type="button" routerLink="orders" class="btn btn-primary">Войти</button>
+          <button type="button" routerLink="registration" class="btn btn-secondary">Зарегестрироваться</button>
+        </div>
+        <div *ngIf="isAuth()">
+          <button type="button" routerLink="order" class="btn btn btn-outline-success btn-lg">Сделать заказ</button>
+        </div>
       </div>
     </div>
     <div class="column col-md-6"><img src="./assets/slide.jpeg" width="100%" alt=""></div>
