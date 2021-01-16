@@ -14,10 +14,7 @@ export class WorkerService {
 
   private heroesUrl = 'rest/getWorkersList';  // URL to web api
 
-  test: Worker[] = [
-    {id: 1, typeWorker: {id: null, type: 'Упала'}, phoneNumber: 0, fullName: 'Дружище', address: 'База'},
-    {id: 1, typeWorker: {id: null, type: 'Упала'}, phoneNumber: 0, fullName: 'Дружище', address: 'База'},
-  ];
+  test: Worker[] = [];
 
   /**
    * Сохранение рабочего

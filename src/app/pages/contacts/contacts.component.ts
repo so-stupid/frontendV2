@@ -10,14 +10,20 @@ import {KeycloakService} from 'keycloak-angular';
 })
 export class ContactsComponent implements OnInit {
   workers: Worker[];
-  private keyService: KeycloakService;
 
-  constructor(private workerService: WorkerService, keyService: KeycloakService) {
-    this.keyService = keyService;
+  constructor(private workerService: WorkerService, private keyService: KeycloakService) {
   }
 
   ngOnInit(): void {
     this.getWorkers();
+  }
+
+
+  getWorkers(): any {
+    return this.workerService.getWorkers()
+      // @ts-ignore TODO Разберись с беком
+      .subscribe(www => this.workers = www.workersList
+      );
   }
 
   isAdmin(): boolean {
@@ -28,10 +34,4 @@ export class ContactsComponent implements OnInit {
     return this.keyService.isUserInRole('user');
   }
 
-  getWorkers(): any {
-    return this.workerService.getWorkers()
-      // @ts-ignore TODO Разберись с беком
-      .subscribe(www => this.workers = www.workersList
-      );
-  }
 }
