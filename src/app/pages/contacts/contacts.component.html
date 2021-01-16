@@ -3,7 +3,8 @@
   <table class="table">
     <thead>
     <tr>
-      <th scope="col">ФИО</th>
+      <th scope="col">Фамилия</th>
+      <th scope="col">Имя</th>
       <th scope="col">Адрес</th>
       <th scope="col">Номер телефона</th>
       <th scope="col">Профессия</th>
@@ -11,7 +12,8 @@
     </thead>
     <tbody>
     <tr *ngFor="let worker of workers">
-      <td>{{worker.fullName}}</td>
+      <td>{{worker.lastName}}</td>
+      <td>{{worker.firstName}}</td>
       <td>{{worker.address}}</td>
       <td>{{worker.phoneNumber}}</td>
       <td>{{worker.typeWorker.type}}</td>
