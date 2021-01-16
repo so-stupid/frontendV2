@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Orders} from '../../dto/orders';
 import {OrdersService} from '../../services/orders.service';
+import {timeConverter} from '../../utils/time.util';
 
 
 @Component({
@@ -16,6 +17,10 @@ export class OrdersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllOrders();
+  }
+
+  toTime(temp): any {
+    return timeConverter(temp)
   }
 
   getAllOrders(): any {
