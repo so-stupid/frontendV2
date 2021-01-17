@@ -1,0 +1,107 @@
+<div class="container">
+  <form #orderForm="ngForm" *ngIf="order">
+    <div class="separate">
+      <label> Клиент</label>
+      <div class="form-row">
+        <div class="col">
+          <app-input-field name="firstName"
+                           placeholder="Имя"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.client.firstName">
+          </app-input-field>
+        </div>
+        <div class="col">
+          <app-input-field name="lastName"
+                           placeholder="Фамилия"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.client.lastName">
+          </app-input-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <app-input-field name="phoneNumber"
+                           placeholder="Номер телефона"
+                           type="number"
+                           required="true"
+                           [(ngModel)]="order.client.phoneNumber">
+          </app-input-field>
+        </div>
+        <div class="col">
+          <app-input-field name="address"
+                           placeholder="Адрес"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.client.address">
+          </app-input-field>
+        </div>
+      </div>
+    </div>
+    <div class="separate">
+      <label> Автомобиль</label>
+      <div class="form-row">
+        <div class="col">
+          <app-input-field name="mark"
+                           placeholder="Марка"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.auto.mark">
+          </app-input-field>
+        </div>
+        <div class="col">
+          <app-input-field name="lastMark"
+                           placeholder="Модель"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.auto.lastMark">
+          </app-input-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <app-input-field name="govLicense"
+                           placeholder="Гос. номер"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.auto.govLicense">
+          </app-input-field>
+        </div>
+        <div class="col">
+          <app-input-field name="bodyNumber"
+                           placeholder="Номер кузова"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.auto.regBody">
+          </app-input-field>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col">
+          <app-input-field name="color"
+                           placeholder="Цвет"
+                           type="text"
+                           required="true"
+                           [(ngModel)]="order.auto.color">
+          </app-input-field>
+        </div>
+        <div class="col">
+          <app-input-field name="yoc"
+                           placeholder="Год выпуска"
+                           type="number"
+                           required="true"
+                           [(ngModel)]="order.auto.yoc">
+          </app-input-field>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-lg btn-outline-success btn-block"
+            type="submit"
+            [disabled]="!orderForm.valid"
+            (click)="saveOrder()">Сделать заказ
+    </button>
+
+  </form>
+</div>

@@ -9,6 +9,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {KeycloakAngularModule, KeycloakService} from 'keycloak-angular';
 import {initializeKeycloak} from './utils/app.init';
 
+
 @NgModule({
   declarations: [
     AppComponent,

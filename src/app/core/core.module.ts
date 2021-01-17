@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {MenuComponent} from './menu/menu.component';
 import {RouterModule} from '@angular/router';
 import {FooterComponent} from './footer/footer.component';
-import {OrderComponent} from '../forms/order/order.component';
 import {HeaderComponent} from './header/header.component';
 import {FormsModule} from '@angular/forms';
 import {WorkersFormComponent} from '../forms/workers-form/workers-form.component';
@@ -12,8 +11,8 @@ import {TempComponent} from './temp/temp.component';
 import {PriceFormComponent} from '../forms/price-form/price-form.component';
 
 @NgModule({
-  declarations: [MenuComponent, FooterComponent, OrderComponent, HeaderComponent,
-    InputFieldComponent, TempComponent, WorkersFormComponent, PriceFormComponent],
+  declarations: [MenuComponent, FooterComponent, HeaderComponent,
+    InputFieldComponent, TempComponent, WorkersFormComponent, PriceFormComponent,],
   exports: [
     MenuComponent,
     FooterComponent,
