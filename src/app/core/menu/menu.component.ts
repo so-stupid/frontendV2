@@ -14,6 +14,10 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isAdmin(): boolean {
+    return this.keycloackService.isUserInRole('admin');
+  }
+
   isAuth(): boolean {
     return this.keycloackService.isUserInRole('user');
   }
