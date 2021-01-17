@@ -14,8 +14,7 @@ export class OrderPageComponent implements OnInit {
   constructor() {
     this.order = new Order();
     this.order.auto = new Auto();
-    this.order.client = new Client()
-
+    this.order.client = new Client();
   }
 
   ngOnInit(): void {
