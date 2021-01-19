@@ -5,6 +5,8 @@ import {Orders} from '../dto/orders';
 import {Observable} from 'rxjs';
 import {Price} from '../dto/price';
 import {Order} from '../dto/Order';
+import {Auto} from '../dto/Auto';
+import {Client} from '../dto/client';
 
 
 @Injectable({
@@ -27,6 +29,20 @@ export class OrdersService {
     const params = {
       order
     };
-    return this.restService.doCall('saveSingleOrder', params);
+    return this.restService.doCall('saveOrder', params);
+  }
+
+  public saveAuto(auto: Auto): any {
+    const params = {
+      auto
+    };
+    return this.restService.doCall('saveAuto', params);
+  }
+
+  public saveClient(client: Client): any {
+    const params = {
+      client
+    };
+    return this.restService.doCall('saveClient', params);
   }
 }

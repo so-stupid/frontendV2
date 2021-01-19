@@ -22,8 +22,27 @@ export class OrderPageComponent implements OnInit {
   }
 
   saveOrder(): any {
-    console.log('done');
-    // this.ordersService.saveOrder(this.order);
+    this.saveAuto();
+    this.saveClient();
+    this.ordersService.saveOrder(this.order)
+      .subscribe((res) => {
+        console.log(res);
+      });
+    alert('Заказ добавлен');
+  }
+
+  saveAuto(): any {
+    this.ordersService.saveAuto(this.order.auto)
+      .subscribe((res) => {
+        console.log(res);
+      });
+  }
+
+  saveClient(): any {
+    this.ordersService.saveClient(this.order.client)
+      .subscribe((res) => {
+        console.log(res);
+      });
   }
 
 }

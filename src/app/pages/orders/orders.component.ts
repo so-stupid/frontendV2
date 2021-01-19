@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Orders} from '../../dto/orders';
 import {OrdersService} from '../../services/orders.service';
 import {timeConverter} from '../../utils/time.util';
-import {UserService} from '../../services/user.service';
 import {User} from '../../dto/User';
 
 
@@ -15,7 +14,7 @@ export class OrdersComponent implements OnInit {
   orders: Orders[];
   user: User = {lastName: '1', email: '1', emailVerified: false, firstName: '1', username: '2'};
 
-  constructor(private ordersService: OrdersService, private userService: UserService) {
+  constructor(private ordersService: OrdersService) {
   }
 
   ngOnInit(): void {

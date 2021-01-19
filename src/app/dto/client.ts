@@ -1,5 +1,3 @@
-import {Auto} from './Auto';
-
 export class Client {
 
   public id: number;
@@ -7,5 +5,4 @@ export class Client {
   public lastName: string;
   public phoneNumber: string;
   public address: string;
-  public auto: Auto;
 }

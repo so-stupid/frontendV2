@@ -20,7 +20,27 @@
     </tr>
     </tbody>
   </table>
-  <app-workers-form *ngIf="isAdmin()"></app-workers-form>
+  <div class="row row-cat w-row" *ngIf="isAdmin()">
+    <div class="column col-md-6">
+      <app-workers-form></app-workers-form>
+    </div>
+    <div class="column col-md-6 custom-prof">
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Профессия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let type of types">
+          <td>{{type[0]}}</td>
+          <td>{{type[1]}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 <hr>
 

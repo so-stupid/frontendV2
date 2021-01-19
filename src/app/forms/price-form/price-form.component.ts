@@ -18,6 +18,7 @@ export class PriceFormComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
       });
+    alert('Список услуг обновлен');
   }
   ngOnInit(): void {
   }
